@@ -26,17 +26,21 @@ module.exports = class LockDownEssentials extends Order {
         aReturn.push(`For a list of what we sell tap:`);
         aReturn.push(`${this.sUrl}/payment/${this.sNumber}/`);
         this.stateCur = OrderState.ITEM;
-        aReturn.push("Would you like Indoor or Outdoor items?");
+        aReturn.push("Would you like INDOOR or OUTDOOR items?");
         break;
       case OrderState.ITEM:
         if (sInput.toLowerCase() == "indoor") {
           this.stateCur = OrderState.INDOOR;
           aReturn.push("Which indoor item do you want?");
           aReturn.push("1.Broom 2.Bulb 3.Cleaners ");
-        } else {
+        } else if (sInput.toLowerCase() == "outdoor"){
           this.stateCur = OrderState.OUTDOOR;
           aReturn.push("Which outdoor item do you want?");
           aReturn.push("1.Snow shovels 2.Lawn care 3.Snow clearing");
+        }
+        else {
+          this.stateCur = OrderState.ITEM;
+        aReturn.push("Enter a valid choice: INDOOR or OUTDOOR ?");
         }
         break;
       case OrderState.INDOOR:
