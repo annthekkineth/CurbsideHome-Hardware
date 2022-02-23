@@ -112,7 +112,6 @@ module.exports = class LockDownEssentials extends Order {
             this.nTotal += 17.5;
           } else {
             aReturn.push("Invalid item!");
-            break;
           }
         }
         aReturn.push("Thank-you for your order of");
