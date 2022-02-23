@@ -94,7 +94,7 @@ module.exports = class LockDownEssentials extends Order {
             "1.Simoniz car cloth 2.Geeky headlamps 3.Descalar kettle"
           );
         } else {
-          aReturn.push("Would you like Indoor or Outdoor items?");
+          aReturn.push("Would you like INDOOR or OUTDOOR items?");
           this.stateCur = OrderState.ITEM;
         }
         break;
