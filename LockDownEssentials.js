@@ -44,12 +44,15 @@ module.exports = class LockDownEssentials extends Order {
         }
         break;
       case OrderState.INDOOR:
-        this.sOrder += sInput + ", ";
+       
         if (sInput.toLowerCase() == "broom") {
+          this.sOrder += sInput + ", ";
           this.nTotal += 6;
         } else if (sInput.toLowerCase() == "bulb") {
+          this.sOrder += sInput + ", ";
           this.nTotal += 3;
         } else if (sInput.toLowerCase() == "cleaners") {
+          this.sOrder += sInput + ", ";
           this.nTotal += 8;
         } else {
           aReturn.push(
@@ -62,12 +65,15 @@ module.exports = class LockDownEssentials extends Order {
         aReturn.push("Would you like to order another item?");
         break;
       case OrderState.OUTDOOR:
-        this.sOrder += sInput + ", ";
+        
         if (sInput.toLowerCase() == "snow shovels") {
+          this.sOrder += sInput + ", ";
           this.nTotal += 10;
         } else if (sInput.toLowerCase() == "lawn care") {
+          this.sOrder += sInput + ", ";
           this.nTotal += 15;
         } else if (sInput.toLowerCase() == "snow clearing") {
+          this.sOrder += sInput + ", ";
           this.nTotal += 100;
         } else {
           aReturn.push(
